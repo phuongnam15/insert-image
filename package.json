@@ -1,0 +1,73 @@
+{
+    "name": "insert-image",
+    "version": "1.0.0",
+    "description": "insert image",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "electron .",
+        "start.dev": "npx electronmon --trace-warnings .",
+        "build": "electron-builder"
+    },
+    "electronmon": {
+        "patterns": [
+            "!images/**/*",
+            "!text/**/*",
+            "!result/**/*"
+        ]
+    },
+    "build": {
+        "appId": "1475369",
+        "productName": "Insert Image",
+        "copyright": "© 2024 phuongnam",
+        "directories": {
+            "output": "dist"
+        },
+        "files": [
+            "main.js",
+            "index.js",
+            "preload.js",
+            "ui/build",
+            "node_modules",
+            "package.json",
+            "icons"
+        ],
+        "extraResources": [
+            {
+                "from": "node_modules/@noble/hashes",
+                "to": "node_modules/@noble/hashes"
+            },
+            {
+                "from": "node_modules/@adraffy/ens-normalize",
+                "to": "node_modules/@adraffy/ens-normalize"
+            },
+            {
+                "from": "node_modules/@noble/curves",
+                "to": "node_modules/@noble/curves"
+            }
+        ],
+        "win": {
+            "target": "nsis",
+            "icon": "icons/avatar-admin.ico",
+            "requestedExecutionLevel": "requireAdministrator"
+        },
+        "mac": {
+            "icon": "icons/avatar-admin.icns"
+        }
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "commander": "^10.0.0",
+        "dotenv": "^16.4.5",
+        "exceljs": "^4.4.0",
+        "moment": "^2.30.1",
+        "sharp": "^0.33.5",
+        "toastify-js": "^1.12.0"
+    },
+    "devDependencies": {
+        "electron": "^30.1.0",
+        "electron-builder": "^25.0.0-alpha.9",
+        "electronmon": "^2.0.3"
+    }
+}

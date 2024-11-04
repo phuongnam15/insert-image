@@ -1,0 +1,8 @@
+/node_modules
+/dist
+/dist.zip
+/dist.rar
+/.env
+/image
+/text
+/result
